@@ -1,0 +1,11 @@
+﻿<h3>What topics are you interested in?</h3>
+
+<section class="topics">
+@foreach (var item in ViewBag.Interests)
+{
+    <div>
+        <a href="#"><img src="@item.ImageUrl"/></a>
+        <span>@item.Name</span>
+    </div>
+}
+</section>

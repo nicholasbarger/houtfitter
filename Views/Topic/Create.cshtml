@@ -1,0 +1,109 @@
+﻿@using (Html.BeginForm("Create", "Topic", FormMethod.Post))
+{
+    <div class="input-field">
+        <input type="text" id="name" name="name" class="validate" autofocus="autofocus">
+	    <label for="name">Name</label>
+    </div>
+
+    <div class="input-field">
+	    <div class="tags"></div>
+	    <label>Tags</label>
+	</div>
+
+    <div class="input-field">
+        <textarea id="content" name="content" class="materialize-textarea validate"></textarea>
+        <label for="content">Content</label>
+    </div>
+
+    <div class="row">
+        <div class="col m6">
+            <a href="#add_product_modal" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+		    <label>Add a product</label>
+
+		    <div id="add_product_modal" class="modal">
+		        <div class="modal-content">
+		            <h3>Add Product</h3>
+		            <p>
+		                <input type="radio" name="product1" id="amazon" checked="checked" value="amazon">
+		                <label for="amazon">Amazon</label>
+
+		                <input type="radio" name="product1" id="other" value="other">
+		                <label for="other">Other</label>
+		            </p>
+
+		            <div id="add-product-amazon" class="input-field">
+		                <input type="text" id="amazon_product_url" name="amazon_product_url">
+		                <label for="amazon_product_url">Amazon Link</label>
+		            </div>
+
+		            <div id="add-product-other" style="display: none;">
+		                <div class="input-field">
+		                    <input type="text" id="other_product_url" name="other_product_url">
+		                    <label for="other_product_url">Website Url</label>
+		                </div>
+
+		                <div class="input-field">
+		                    <input type="text" id="product_price" name="product_price">
+		                    <label for="product_price">Price</label>
+		                </div>
+
+		                <div class="input-field file-field">
+		                    <div class="btn">
+		                        <span>Image</span>
+		                        <input type="file" id="product_image" name="product_image">
+		                    </div>
+		                    <div class="file-path-wrapper">
+		                        <input type="text" class="file-path validate" placeholder="Select an image to upload">
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="modal-footer">
+		            <a href="#" class="modal-action modal-close waves-effect btn">Done</a>
+		        </div>
+		    </div>
+	    </div>
+	    <div class="col m6">
+            <a href="#add_video_modal" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+		    <label>Add a video</label>
+
+		    <div id="add_video_modal" class="modal">
+		        <div class="modal-content">
+		            <h3>Add Video</h3>
+		            <p>
+		                <input type="radio" name="video1" id="youtube" checked="checked">
+		                <label for="youtube">Youtube</label>
+
+		                <input type="radio" name="video1" id="vimeo">
+		                <label for="vimeo">Vimeo</label>
+		            </p>
+
+		            <div class="input-field">
+		                <input type="text" id="video_url" name="video_url">
+		                <label for="video_url">Video Link</label>
+		            </div>
+		        </div>
+		        <div class="modal-footer">
+		            <a href="#" class="modal-action modal-close waves-effect btn">Done</a>
+		        </div>
+		    </div>
+        </div>
+    </div>
+
+    <p>
+        <button type="submit" class="btn">Save</button>
+	</p>
+}
+
+@section Scripts {
+<script>
+	$('.tags').material_chip();
+	$('.modal').modal();
+
+	$('input[type=radio][name=product1]').change(function() {
+        $('#add-product-amazon').hide();
+	    $('#add-product-other').hide();   
+	    $('#add-product-' + this.value).show();
+	});
+</script>
+}

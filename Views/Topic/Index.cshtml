@@ -1,0 +1,25 @@
+﻿@using (Html.BeginForm("Index", "Topic", FormMethod.Get, new { @class = "main-search" }))
+{
+    <div class="input-field">
+      <input id="s" name="s" type="search" required="required" autofocus="autofocus" value="@ViewBag.SearchTerms">
+      <i class="material-icons">close</i>
+    </div>
+}
+
+<section class="topics">
+@foreach (var item in ViewBag.Topics)
+{
+	<div>
+		<a href="~/Topic/@item.Name"><img src="@item.ImageUrl"/></a>
+        <span>@item.Name</span>
+	</div>
+}
+</section>
+
+@if(ViewBag.Topics.Count == 0)
+{
+    <h2>We couldn't find anything on <span class="search-term">@ViewBag.SearchTerms</span></h2>
+    <p>Don't worry, this isn't bad news!  You can be the first to teach others 
+	about this topic and how to get started.</p>
+    <a href="~/Topic/Create" class="btn">Share with the world, it's easy!</a>
+}

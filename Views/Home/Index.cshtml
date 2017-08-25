@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["isBrandShown"] = false;
+}
+
+<img src="~/images/logo.png" alt="Houtfitter" style="width: 100%;">
+
+@using (Html.BeginForm("Index", "Topic", FormMethod.Get, new { @class = "main-search" }))
+{
+    <div class="input-field">
+      <input id="s" name="s" type="search" required="required" autofocus="autofocus">
+      <i class="material-icons">close</i>
+    </div>
+}
+
+<div id="results"></div>
+
+@section Scripts {
+<!--<script>
+	var scheme = document.location.protocol == "https" ? "wss" : "ws";
+	var port = document.location.port ? (":" + document.location.port) : "";
+	var connectionUrl = scheme + "://localhost" + port;
+	var socket = new WebSocket(connectionUrl);
+
+    document.getElementById("search").addEventListener("keyup", function() {
+        var message = {
+	       id: "search-topics",
+	       data: {
+	          SearchTerms: document.getElementById("search").value, 
+	          Limit: 5
+	       }
+	    };
+	    socket.send(JSON.stringify(message));
+	});
+
+	socket.onmessage = function(event) {
+        var topics = JSON.parse(event.data);
+        var html = '';
+	    for(var i = 0; i < topics.length; i++) {
+	        html += '<a href="#">' + topics[i].Name + '</a><br>';
+	    }
+	
+        // display result of search
+	    document.getElementById("results").innerHTML = html;
+	}
+</script>-->
+}

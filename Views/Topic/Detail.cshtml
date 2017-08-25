@@ -1,0 +1,25 @@
+﻿<div class="row">
+	<div class="col s9">      
+        <section>
+			<h2>@ViewBag.Topic.Name</h2>
+		    @ViewBag.Topic.Content
+		</section>
+	</div>
+
+	<div class="col s3">
+
+		@foreach (var item in ViewBag.Topic.Videos)
+		{
+            @Html.Raw(item.EmbedUrl)
+		}
+		
+        <h3>Products</h3>
+		@foreach (var item in ViewBag.Topic.Ads)
+		{
+            <span>@item.Content</span>
+		}
+
+		<h3>Ads</h3>    
+		
+	</div>
+</div>

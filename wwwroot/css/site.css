@@ -1,0 +1,76 @@
+﻿.brand-logo img {
+    height: 75px;
+}
+
+.main-search .input-field input[type=search] {
+    font-size: 24pt;
+    border: 1px solid #9e9e9e;
+    padding: 10px 25px 10px 25px;
+}
+
+.main-search .input-field input[type=search] ~ .mdi-navigation-close,
+.main-search .input-field input[type=search] ~ .material-icons {
+    top: 10px;
+
+    font-size: 3rem;
+}
+
+nav {
+    background-color: inherit;
+    box-shadow: none;
+}
+
+nav ul a {
+    color: #666;
+}
+
+.nav-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-footer {
+    position: absolute;
+    bottom: 0px;
+    padding-top: 0px;
+    background-color: inherit;
+    width: 100%;
+}
+
+.page-footer nav ul a:hover {
+    background-color: inherit;
+    color: #333;
+}
+
+.search-term {
+    color: green;
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topics div {
+    flex-grow: 1;
+    margin: 2px;
+    background-color: violet;
+    height: 200px;
+}
+
+.topics img {
+    height: 200px;
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100%;
+    vertical-align: bottom;
+}
+
+.topics span {
+    color: #fff;
+    font-size: 24pt;
+    position: relative;
+    top: -50px;
+    left: 10px;
+    text-shadow: 2px 2px #000;
+}
